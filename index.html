@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>D3 Playground</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <style>
+    div {
+      font-weight: "bold";
+      font-size: 20px;
+    }
+
+    .cls-1 {
+      fill: #fff;
+    }
+
+    .cls-2,
+    .cls-7 {
+      fill: none;
+      stroke: #231f20;
+      stroke-miterlimit: 10;
+    }
+
+    .cls-4 {
+      font-size: 8.82px;
+      fill: #231f20;
+      font-family: Seravek, Seravek;
+    }
+
+    .cls-5 {
+      letter-spacing: -0.04em;
+    }
+
+    .cls-6 {
+      letter-spacing: 0em;
+    }
+
+    .cls-7 {
+      stroke-dasharray: 1 1;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    svg {
+      transform: scale(1.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <svg xmlns="http://www.w3.org/2000/svg" width="71.88" height="204.93" viewBox="0 0 71.88 204.93">
+      <defs>
+        <linearGradient id="linear" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-opacity="0" stop-color="#00a651"/>
+          <stop class="middle-stop" offset="100%" stop-opacity="0" stop-color="#00a651"/>
+          <stop class="middle-stop" offset="100%" stop-opacity="1" stop-color="#00a651"/>
+          <stop offset="100%" stop-opacity="1" stop-color="#00a651"/>
+        </linearGradient>
+      </defs>
+      <title>progressBar2</title>
+      <g id="bar">
+        <g>
+          <path class="cls-1" d="M.5,186.43a18,18,0,0,0,36,0V18.5a18,18,0,0,0-36,0Z" />
+          <path class="cls-2" d="M.5,186.43a18,18,0,0,0,36,0V18.5a18,18,0,0,0-36,0Z" />
+        </g>
+        <path fill="url(#linear)" class="cls-3" d="M4,186.64a14.46,14.46,0,0,0,28.92,0V18.28A14.46,14.46,0,0,0,4,18.28Z" />
+      </g>
+      <g id="text-content">
+        <text class="cls-4" transform="translate(46.74 163) scale(1.04 1)">110
+          <tspan class="cls-5" x="13.31" y="0">K</tspan>
+          <tspan class="cls-6" x="18.16" y="0">G</tspan>
+        </text>
+        <line class="cls-7" x1="45.74" y1="162" x2="4.76" y2="162" />
+      </g>
+    </svg>
+
+  </div>
+  <script>
+    var setWeight = (weight) => {
+      const offset = 100 - 100 * (110 - weight) / 20;
+      document.querySelectorAll('.middle-stop').forEach(stop => {
+        stop.setAttribute('offset', `${offset}%`);
+      });
+    }
+  </script>
+</body>
+
+</html>
